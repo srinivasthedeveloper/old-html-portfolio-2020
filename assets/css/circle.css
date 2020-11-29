@@ -1,0 +1,301 @@
+.containercircle
+{
+	position: relative;
+	width: 1200px;
+	margin-left: 5%;
+	margin-bottom: 4%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.containercircle .card
+{
+	position: relative;
+	width: 250px;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 350px;
+	border-radius: 4px;
+	text-align: center;
+	overflow: hidden;
+	transition: 0.5%;
+}
+
+.card:nth-child(1):hover
+{
+	background: rgba(110,110,110,.04);
+}
+
+.card:nth-child(2):hover
+{
+	background: rgba(110,110,110,.04);
+}
+
+.card:nth-child(3):hover
+{
+	background: rgba(110,110,110,.04);
+}
+
+.card:nth-child(4):hover
+{
+	background: rgba(110,110,110,.04);
+}
+
+
+.containercircle .card:hover
+{
+	transform: translateY(-10px);
+	box-shadow: 0 10px 35px rgba(0,0,0,.02);
+}
+
+.containercircle .card:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	pointer-events:none;
+	z-index: 1;
+}
+
+.containercircle .card:nth-child(4):hover:before
+{
+	background: rgba(110,110,110,.08);
+}
+
+.containercircle .card:nth-child(3):hover:before
+{
+	background: rgba(110,110,110,.08);
+}
+
+.containercircle .card:nth-child(2):hover:before
+{
+	background: rgba(110,110,110,.08);
+}
+
+.containercircle .card:nth-child(1):hover:before
+{
+	background: rgba(110,110,110,.08);
+}
+
+
+.percent
+{
+	position: relative;
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	/* box-shadow: inset 0 0 50px rgba(250,250,250); */
+	background: transparent;
+	z-index: 1000;
+}
+
+
+.card:nth-child(1):hover .percent
+{
+	border-radius: 50%;
+	box-shadow: 0 0 10px #00ff43;
+	animation: animate1 2s linear infinite alternate-reverse;
+}
+
+.card:nth-child(2):hover .percent
+{
+	border-radius: 50%;
+	box-shadow: 0 0 10px #00a1ff;
+	animation: animate2 2s linear infinite alternate-reverse;
+}
+
+.card:nth-child(3):hover .percent
+{
+	border-radius: 50%;
+	box-shadow: 0 0 10px #ff04f7;
+	animation: animate3 2s linear infinite alternate-reverse;
+}
+
+.card:nth-child(4):hover .percent
+{
+	border-radius: 50%;
+	box-shadow: 0 0 10px #ff7300;
+	animation: animate1 2s linear infinite alternate-reverse;
+}
+
+
+.percent .number
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+.percent .number h2
+{
+	color: #fff;
+	font-weight: 700;
+	font-size: 50px;
+	transition: 0.5%;
+}
+
+
+.card:hover .percent .number h2
+{
+	color: #fff;
+	font-size: 70px;
+}
+
+.percent .number h2 span
+{
+	font-size: 25px;
+	color:#777;
+}
+
+.card:hover .percent .number h2 span
+{
+	/* font-size: 25px; */
+	color:#fff;
+}
+
+.text
+{
+
+	position: relative;
+	color: #777;
+	font-weight: 700;
+	font-size: 25px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: 0.5%;
+}
+
+.card:hover .text
+{
+	color: #fff;
+	transform: translateY(10px);
+}
+
+svg
+{
+	position: relative;
+	width: 210px;
+	height: 210px;
+	z-index: 1000;
+}
+
+svg circle
+{
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: #fff;
+	stroke-width: 15;
+	stroke-linecap: round;
+	transform: translate(5px,5px);
+
+}
+
+svg circle:nth-child(2)
+{
+	stroke-dasharray: 440;	
+	stroke-dashoffset: 440;
+}
+
+.card:nth-child(1) svg circle:nth-child(2)
+{
+	/* animation: animate1 2s linear forwards; */
+	stroke-dasharray: 580;
+	stroke-dashoffset: 60;
+	stroke:#00ff43;	
+}
+.card:nth-child(2) svg circle:nth-child(2)
+{
+	/* animation: animate2 2s linear forwards; */
+	stroke-dasharray:450;
+	stroke-dashoffset: 120;
+	/* stroke-dashoffset: 450; */
+	stroke:#00a1ff;
+}
+.card:nth-child(3) svg circle:nth-child(2)
+{
+	/* animation: animate3 2s linear forwards; */
+	stroke-dasharray: 500;
+	stroke-dashoffset: 220;
+	stroke:#ff04f7;
+}
+.card:nth-child(4) svg circle:nth-child(2)
+{
+	/* animation: animate1 2s linear forwards; */
+	stroke-dasharray: 580;
+	stroke-dashoffset: 60;
+	stroke:#ff7300;	
+}
+
+@keyframes animate1
+{
+	0%
+	{
+		stroke-dashoffset: 580;
+		filter: hue-rotate(0deg);
+	}
+	100%
+	{
+		stroke-dashoffset: 58;
+		filter: hue-rotate(360deg)
+	}
+}
+
+.card:nth-child(1):hover svg circle:nth-child(2)
+{
+	animation: animate1 2s linear;
+}
+
+@keyframes animate2
+{
+	0%
+	{
+		stroke-dashoffset: 330;
+		filter: hue-rotate(0deg);
+	}
+	100%
+	{
+		stroke-dashoffset: 120;
+		filter: hue-rotate(360deg);
+	}
+}
+
+.card:nth-child(2):hover svg circle:nth-child(2)
+{
+	animation: animate2 2s linear;
+}
+
+@keyframes animate3
+{
+	0%
+	{
+		stroke-dashoffset: 430;
+		filter: hue-rotate(0deg);
+	}
+	100%
+	{
+		stroke-dashoffset: 220;
+		filter: hue-rotate(360deg);
+	}
+}
+.card:nth-child(3):hover svg circle:nth-child(2)
+{
+	animation: animate3 2s linear;
+}
+
+.card:nth-child(4):hover svg circle:nth-child(2)
+{
+	animation: animate1 2s linear;
+}
